@@ -8,6 +8,7 @@
 (define-constant ERR-INVALID-POINTS (err u5))
 (define-constant ERR-INVALID-TRANSACTION-ID (err u6))
 (define-constant ERR-DISPUTE-ALREADY-RAISED (err u7))
+(define-constant ERR-NOT-ARBITRATOR (err u8))
 
 ;; Validate recipient is not the sender
 (define-private (is-valid-recipient (recipient principal))
