@@ -1,0 +1,1 @@
+let notifications = [];\nexport const addNotification = (msg, type) => {\n  notifications.push({ msg, type, time: new Date().toLocaleTimeString() });\n};\nexport const getNotifications = () => notifications;
