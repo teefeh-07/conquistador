@@ -77,6 +77,19 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const userSearchBtn = document.getElementById('user-search-btn');
+  if (userSearchBtn) {
+    userSearchBtn.onclick = async () => {
+      const address = document.getElementById('user-search-input').value;
+      if (!address) return;
+      const { fetchReputationScore } = await import('./ReputationService.js');
+      const result = await fetchReputationScore(address);
+      const resultEl = document.getElementById('user-search-result');
+      if (resultEl) {
+        resultEl.innerHTML = `<p>Score: ${result.score}</p><p>Transactions: ${result.total}</p>`;
+      }
+    };
+  }
   const helpLink = document.getElementById('nav-help');
   if (helpLink) {
     helpLink.onclick = async () => {
