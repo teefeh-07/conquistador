@@ -1,0 +1,1 @@
+export const renderMilestoneList = (milestones) => {\n  const container = document.createElement('div');\n  container.className = 'milestone-list';\n  container.innerHTML = '<h5>Milestones</h5><ul></ul>';\n  return container;\n};
