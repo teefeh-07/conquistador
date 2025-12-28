@@ -7,3 +7,8 @@ import { renderNav } from './Navigation.js';
 document.getElementById('root').prepend(renderNav());
 import { fetchTransactionHistory } from './TransactionHistoryService.js';
 fetchTransactionHistory().then(txs => updateTransactionList(txs));
+import { fetchReputationScore } from './ReputationService.js';
+import { updateReputationCard } from './ReputationCard.js';
+fetchReputationScore('ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM').then(data => updateReputationCard(data.score, data.total));
+import { renderTxForm } from './TransactionForm.js';
+document.getElementById('root').appendChild(renderTxForm());
