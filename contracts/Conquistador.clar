@@ -84,7 +84,7 @@
         amount: amount,
         status: "PENDING",
         created-at: block-height,
-        reputation-points: u0,
+        reputation-points: u0, disputed: false,
       })
 
       (ok transaction-id)
