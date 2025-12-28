@@ -81,6 +81,8 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const syncEl = document.getElementById('last-sync-time');
+  if (syncEl) syncEl.innerText = new Date().toLocaleTimeString();
   const { callReadOnlyFunction } = await import('@stacks/transactions');
   const ownerResult = await callReadOnlyFunction({
     contractAddress: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
