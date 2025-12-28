@@ -77,6 +77,18 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const termsLink = document.getElementById('footer-terms');
+  if (termsLink) {
+    termsLink.onclick = async (e) => {
+      e.preventDefault();
+      const { renderTerms } = await import('./TermsContent.js');
+      const { renderModal } = await import('./Modal.js');
+      const modal = renderModal('Terms and Conditions', renderTerms());
+      document.body.appendChild(modal);
+      modal.style.display = 'block';
+      modal.querySelector('.close').onclick = () => modal.remove();
+    };
+  }
   const userSearchBtn = document.getElementById('user-search-btn');
   if (userSearchBtn) {
     userSearchBtn.onclick = async () => {
