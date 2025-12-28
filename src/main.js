@@ -85,3 +85,4 @@ const initApp = async () => {
 
 initApp();
 window.toggleMilestones = async (txId) => {\n  const area = document.getElementById(`milestone-area-${txId}`);\n  if (area.innerHTML) { area.innerHTML = ''; return; }\n  const { renderMilestoneForm } = await import('./MilestoneForm.js');\n  area.appendChild(renderMilestoneForm(txId));\n};
+document.getElementById('new-escrow-btn').onclick = () => {\n  const form = document.querySelector('.tx-form-container');\n  form.style.display = form.style.display === 'block' ? 'none' : 'block';\n};
