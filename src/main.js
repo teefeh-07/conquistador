@@ -12,3 +12,4 @@ import { updateReputationCard } from './ReputationCard.js';
 fetchReputationScore('ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM').then(data => updateReputationCard(data.score, data.total));
 import { renderTxForm } from './TransactionForm.js';
 document.getElementById('root').appendChild(renderTxForm());
+import './ErrorHandler.js';
