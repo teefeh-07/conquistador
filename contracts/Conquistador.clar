@@ -1,3 +1,5 @@
+;; @contract Conquistador
+;; @description Escrow and Reputation system with Dispute Resolution.
 ;; Conquistador: Decentralized Escrow and Reputation Management
 
 (define-constant CONTRACT-OWNER tx-sender)
