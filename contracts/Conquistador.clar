@@ -222,3 +222,7 @@ n;; Add a milestone to a transaction (Sender only)
     (ok true)
   )
 )
+n;; Get current arbitrator
+(define-read-only (get-arbitrator)
+  (var-get arbitrator)
+)

@@ -1,0 +1,1 @@
+export const updateReputationCard = (score, total) => {\n  const card = document.querySelector('.rep-card');\n  if (card) card.innerHTML = `<h3>Reputation Score: ${score}/100</h3><p>Total Transactions: ${total}</p>`;\n};
