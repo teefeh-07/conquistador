@@ -10,6 +10,8 @@ import { renderDashboard } from './Dashboard.js';
 import { renderTransactionList } from './TransactionList.js';
 import { renderArbitratorDashboard, updateDisputedList } from './ArbitratorDashboard.js';
 import { fetchDisputedTransactions } from './ArbitratorService.js';
+import { getState, setState } from './State.js';
+import { filterTransactions, searchTransactions } from './FilterService.js';
 import { renderReputationCard } from './ReputationCard.js';
 import { renderFooter } from './Footer.js';
 import { renderTxForm } from './TransactionForm.js';
@@ -65,6 +67,18 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const arbLink = document.getElementById('nav-arbitrator');
+  if (arbLink) {
+    arbLink.onclick = async () => {
+      const arbDash = document.querySelector('.arbitrator-dashboard');
+      const visible = arbDash.style.display === 'block';
+      arbDash.style.display = visible ? 'none' : 'block';
+      if (!visible) {
+        const disputes = await fetchDisputedTransactions();
+        updateDisputedList(disputes);
+      }
+    };
+  }
   try {
     const stats = await fetchGlobalStats();
     updateStatsGrid(stats.totalTx, stats.totalDisputes);
