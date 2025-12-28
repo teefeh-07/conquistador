@@ -42,3 +42,4 @@ select { background: #0f172a; border: 1px solid #334155; color: white; padding: 
 .network-switcher { position: fixed; bottom: 20px; left: 20px; z-index: 100; }
 .user-search { margin: 2rem 0; padding: 1.5rem; background: #1e293b; border-radius: 12px; border: 1px solid #334155; } .user-search input { min-width: 300px; }
 .arb-whitelist { background: #111827; padding: 2rem; border-radius: 12px; border: 1px solid #1e3a8a; margin-top: 2rem; } .arb-add-form { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #374151; }
+.tooltip { font-size: 0.75rem; color: #9ca3af; margin-bottom: 1rem; italic; }
