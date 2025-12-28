@@ -216,5 +216,9 @@ const initApp = async () => {
 
 initApp();
 window.toggleMilestones = async (txId) => {\n  const area = document.getElementById(`milestone-area-${txId}`);\n  if (area.innerHTML) { area.innerHTML = ''; return; }\n  const { renderMilestoneForm } = await import('./MilestoneForm.js');\n  area.appendChild(renderMilestoneForm(txId));\n};
+  const { calculateProgress } = await import('./MilestoneService.js');
+  const progress = calculateProgress(milestones);
+  const progressEl = document.getElementById(`m-progress-${txId}`);
+  if (progressEl) progressEl.style.width = `${progress}%`;
 window.resolveDispute = async (txId, winner) => {\n  const { resolveDisputeOnChain } = await import('./ContractInteractions.js');\n  try {\n    await resolveDisputeOnChain(txId, winner);\n    const { showNotification } = await import('./Notifications.js');\n    showNotification('Dispute Resolved!', 'success');\n  } catch (err) {\n    const { showNotification } = await import('./Notifications.js');\n    showNotification('Failed to resolve dispute', 'error');\n  }\n};
 const applyFilters = () => {\n  const { allTransactions } = getState();\n  const status = document.getElementById('status-filter')?.value || 'all';\n  const query = document.getElementById('search-input')?.value || '';\n  \n  let filtered = filterTransactions(allTransactions, status);\n  filtered = searchTransactions(filtered, query);\n  \n  updateTransactionList(filtered);\n};
