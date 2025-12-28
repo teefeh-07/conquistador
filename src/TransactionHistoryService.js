@@ -12,4 +12,7 @@ const getTransactionDetails = async (id) => {\n  const result = await callReadOn
     functionArgs: [uintCV(id)],
     senderAddress: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
   });
-  return result.value ? { id, status: result.value.data.status.data } : null;\n  return null;\n};
+    if (!result.value) return null;
+  try {
+    return { id, status: result.value.data.status.data, sender: result.value.data.sender.data, recipient: result.value.data.recipient.data };
+  } catch (e) { return null; }\n  return null;\n};
