@@ -190,7 +190,7 @@
 (define-read-only (get-transaction-details (transaction-id uint))
   (map-get? transactions { id: transaction-id })
 )
-n
+
 ;; @public resolve-dispute
 ;; @param transaction-id: uint - ID of the disputed transaction
 ;; @param winner: principal - Address that won the dispute
@@ -217,7 +217,7 @@ n
     )
   )
 )
-n;; Add a milestone to a transaction (Sender only)
+;; Add a milestone to a transaction (Sender only)
 (define-public (add-milestone (transaction-id uint) (milestone-id uint) (description (string-ascii 50)) (amount uint))
   (let
     (
@@ -228,10 +228,10 @@ n;; Add a milestone to a transaction (Sender only)
     (ok true)
   )
 )
-n;; Get current arbitrator
+;; Get current arbitrator
 (define-read-only (get-arbitrator)
   (var-get arbitrator)
 )
-n;; (define-read-only (get-dispute-status (transaction-id uint))
+;; (define-read-only (get-dispute-status (transaction-id uint))
 ;;   (get status (unwrap! (map-get? transactions { id: transaction-id }) (err u0)))
 ;; )
