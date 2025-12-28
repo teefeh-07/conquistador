@@ -1,0 +1,1 @@
+export const sortTransactionsByPriority = (txs) => {\n  const priorityMap = { high: 3, medium: 2, low: 1 };\n  return [...txs].sort((a, b) => priorityMap[b.priority || 'medium'] - priorityMap[a.priority || 'medium']);\n};
