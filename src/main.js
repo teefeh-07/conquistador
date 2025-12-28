@@ -16,6 +16,7 @@ import { renderSettings } from './Settings.js';
 import { renderNetworkSwitcher } from './NetworkSwitcher.js';
 import { sortTransactionsByPriority } from './SortService.js';
 import { renderUserSearch } from './UserSearch.js';
+import { renderArbWhitelist } from './ArbWhitelist.js';
 import { getStatusBreakdown } from './ReputationService.js';
 import { filterTransactions, searchTransactions } from './FilterService.js';
 import { renderReputationCard } from './ReputationCard.js';
@@ -48,6 +49,9 @@ root.appendChild(renderDetailedProfile());
   root.appendChild(arbDashboard);
 root.appendChild(renderFooter());
 root.appendChild(renderSettings());
+  const adminPanel = renderArbWhitelist();
+  adminPanel.style.display = 'none';
+  root.appendChild(adminPanel);
 root.appendChild(renderNetworkSwitcher());
 
 // Global transaction actions
