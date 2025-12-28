@@ -172,3 +172,5 @@ await releaseFundsOnChain(1);
 - `add-reputation-points`: Adds reputation points to a user.
 - `raise-dispute`: Raises a dispute for a transaction.
 - `resolve-dispute`: Resolves a dispute (arbitrator only).
+## Project Architecture
+Conquistador is built with a modular architecture split between Clarity smart contracts and a vanilla JavaScript frontend.
