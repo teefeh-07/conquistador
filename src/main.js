@@ -9,6 +9,7 @@ import { renderNav } from './Navigation.js';
 import { renderDashboard } from './Dashboard.js';
 import { renderTransactionList } from './TransactionList.js';
 import { renderReputationCard } from './ReputationCard.js';
+import { renderFooter } from './Footer.js';
 import { renderTxForm } from './TransactionForm.js';
 
 // Import services
@@ -26,6 +27,7 @@ root.appendChild(renderDashboard());
 root.appendChild(renderTxForm());
 root.appendChild(renderTransactionList());
 root.appendChild(renderReputationCard());
+root.appendChild(renderFooter());
 
 // Global transaction actions
 window.releaseFunds = async (id) => {
