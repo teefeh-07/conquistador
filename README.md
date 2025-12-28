@@ -177,3 +177,6 @@ Conquistador is built with a modular architecture split between Clarity smart co
 ### Smart Contracts
 - **Escrow Logic**: Handles STX transfers and lock-ups.
 - **Reputation Map**: Tracks user performance across transactions.
+### Frontend
+- **Component Based**: Modular JS components for each UI element.
+- **Service Layer**: Decoupled contract interaction and data fetching logic.
