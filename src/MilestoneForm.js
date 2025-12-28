@@ -1,1 +1,1 @@
-export const renderMilestoneForm = (transactionId) => {\n  const form = document.createElement('div');\n  form.className = 'milestone-form';\n  form.innerHTML = '<h4>Add Milestone</h4>';\n  return form;\n};
+export const renderMilestoneForm = (transactionId) => {\n  const form = document.createElement('div');\n  form.className = 'milestone-form';\n  form.innerHTML = '<h4>Add Milestone</h4><input id='m-desc' placeholder='Description' />';\n  return form;\n};
