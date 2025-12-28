@@ -98,6 +98,8 @@ const initApp = async () => {
   try {
     const txs = await fetchTransactionHistory(userAddress);
     setState({ allTransactions: txs });
+    const breakdown = getStatusBreakdown(txs);
+    updateStatusChart(breakdown);
     updateTransactionList(txs);
   } catch (err) {
     console.error('Failed to fetch transactions:', err);
