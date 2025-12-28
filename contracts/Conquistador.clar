@@ -54,6 +54,8 @@
   }
 )
 
+;; Transaction Milestones
+(define-map milestones { transaction-id: uint, milestone-id: uint } { description: (string-ascii 50), amount: uint, status: (string-ascii 20) })
 ;; Generate unique transaction ID
 (define-data-var arbitrator principal tx-sender)
 (define-data-var next-transaction-id uint u1)
