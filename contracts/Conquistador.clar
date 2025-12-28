@@ -46,6 +46,7 @@
 )
 
 ;; Generate unique transaction ID
+(define-data-var arbitrator principal tx-sender)
 (define-data-var next-transaction-id uint u1)
 
 ;; Create new transaction
