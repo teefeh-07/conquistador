@@ -12,6 +12,8 @@ import { renderArbitratorDashboard, updateDisputedList } from './ArbitratorDashb
 import { fetchDisputedTransactions } from './ArbitratorService.js';
 import { getState, setState } from './State.js';
 import { renderDetailedProfile, updateStatusChart } from './DetailedProfile.js';
+import { renderSettings } from './Settings.js';
+import { renderNetworkSwitcher } from './NetworkSwitcher.js';
 import { getStatusBreakdown } from './ReputationService.js';
 import { filterTransactions, searchTransactions } from './FilterService.js';
 import { renderReputationCard } from './ReputationCard.js';
@@ -42,6 +44,8 @@ root.appendChild(renderDetailedProfile());
   arbDashboard.style.display = 'none';
   root.appendChild(arbDashboard);
 root.appendChild(renderFooter());
+root.appendChild(renderSettings());
+root.appendChild(renderNetworkSwitcher());
 
 // Global transaction actions
 window.releaseFunds = async (id) => {
