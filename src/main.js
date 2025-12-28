@@ -81,6 +81,14 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const resetBtn = document.getElementById('clear-filters-btn');
+  if (resetBtn) {
+    resetBtn.onclick = () => {
+      document.getElementById('status-filter').value = 'all';
+      document.getElementById('search-input').value = '';
+      applyFilters();
+    };
+  }
   const syncEl = document.getElementById('last-sync-time');
   if (syncEl) syncEl.innerText = new Date().toLocaleTimeString();
   const { callReadOnlyFunction } = await import('@stacks/transactions');
