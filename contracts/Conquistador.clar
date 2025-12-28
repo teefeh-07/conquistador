@@ -226,3 +226,6 @@ n;; Get current arbitrator
 (define-read-only (get-arbitrator)
   (var-get arbitrator)
 )
+n;; (define-read-only (get-dispute-status (transaction-id uint))
+;;   (get status (unwrap! (map-get? transactions { id: transaction-id }) (err u0)))
+;; )
