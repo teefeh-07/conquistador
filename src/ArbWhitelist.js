@@ -3,7 +3,7 @@
     if (!address) return;
     const { checkArbWhitelisted } = await import('./ArbWhitelistService.js');
     const status = await checkArbWhitelisted(address);
-    alert(`Arbitrator Active: ${status.active}`);
+    alert(`Arbitrator is ${status.active ? 'ACTIVE' : 'INACTIVE'}`);
   };
 
   container.querySelector('#deactivate-arb-btn').onclick = async () => {
