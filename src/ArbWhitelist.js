@@ -11,6 +11,10 @@
   };
 
   container.querySelector('#deactivate-arb-btn').onclick = async () => {
+    const auditList = container.querySelector('#admin-audit-list');
+    const li = document.createElement('li');
+    li.innerText = `Deactivated: ${address} at ${new Date().toLocaleTimeString()}`;
+    auditList.appendChild(li);
     const address = container.querySelector('#manage-arb-address').value;
     if (!address) return;
     const { deactivateArbitratorOnChain } = await import('./ContractInteractions.js');
