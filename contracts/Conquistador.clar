@@ -56,6 +56,7 @@
 (define-data-var next-transaction-id uint u1)
 
 ;; Create new transaction
+;; --- Public Functions ---
 (define-public (create-transaction 
   (recipient principal) 
   (amount uint)
@@ -93,6 +94,7 @@
 )
 
 ;; Release funds to recipient
+;; --- Public Functions ---
 (define-public (release-funds (transaction-id uint))
   (begin
     ;; Validate transaction ID
@@ -130,6 +132,7 @@
 )
 
 ;; Add reputation points
+;; --- Public Functions ---
 (define-public (add-reputation-points 
   (transaction-id uint) 
   (points uint)
@@ -203,6 +206,7 @@
   (map-get? transactions { id: transaction-id })
 )
 n;; Resolve a dispute (Arbitrator only)
+;; --- Public Functions ---
 (define-public (resolve-dispute (transaction-id uint) (winner principal))
   (ok true)
 )
