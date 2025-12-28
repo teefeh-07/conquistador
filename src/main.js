@@ -84,3 +84,4 @@ const initApp = async () => {
 };
 
 initApp();
+window.completeMilestone = async (txId, mId) => {\n  const { completeMilestoneOnChain } = await import('./ContractInteractions.js');\n  try {\n    await completeMilestoneOnChain(txId, mId);\n    const { showNotification } = await import('./Notifications.js');\n    showNotification('Milestone Completed!', 'success');\n  } catch (err) {\n    const { showNotification } = await import('./Notifications.js');\n    showNotification('Failed to complete milestone', 'error');\n  }\n};
