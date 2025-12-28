@@ -14,6 +14,7 @@ import { getState, setState } from './State.js';
 import { renderDetailedProfile, updateStatusChart } from './DetailedProfile.js';
 import { renderSettings } from './Settings.js';
 import { renderNetworkSwitcher } from './NetworkSwitcher.js';
+import { sortTransactionsByPriority } from './SortService.js';
 import { getStatusBreakdown } from './ReputationService.js';
 import { filterTransactions, searchTransactions } from './FilterService.js';
 import { renderReputationCard } from './ReputationCard.js';
@@ -74,6 +75,14 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const sortBtn = document.getElementById('sort-priority-btn');
+  if (sortBtn) {
+    sortBtn.onclick = () => {
+      const { allTransactions } = getState();
+      const sorted = sortTransactionsByPriority(allTransactions);
+      updateTransactionList(sorted);
+    };
+  }
   const logLink = document.getElementById('nav-notifs');
   if (logLink) {
     logLink.onclick = async () => {
