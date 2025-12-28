@@ -75,6 +75,14 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const prioritySelector = document.getElementById('tx-priority');
+  if (prioritySelector) {
+    prioritySelector.onchange = (e) => {
+      const feeMap = { low: '0.0001', medium: '0.001', high: '0.01' };
+      const feeEl = document.getElementById('fee-estimate');
+      if (feeEl) feeEl.innerText = `Est. Fee: ${feeMap[e.target.value]} STX`;
+    };
+  }
   const sortBtn = document.getElementById('sort-priority-btn');
   if (sortBtn) {
     sortBtn.onclick = () => {
