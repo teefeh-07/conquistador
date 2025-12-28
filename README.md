@@ -174,3 +174,6 @@ await releaseFundsOnChain(1);
 - `resolve-dispute`: Resolves a dispute (arbitrator only).
 ## Project Architecture
 Conquistador is built with a modular architecture split between Clarity smart contracts and a vanilla JavaScript frontend.
+### Smart Contracts
+- **Escrow Logic**: Handles STX transfers and lock-ups.
+- **Reputation Map**: Tracks user performance across transactions.
