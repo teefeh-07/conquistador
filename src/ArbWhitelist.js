@@ -13,6 +13,11 @@
     await deactivateArbitratorOnChain(address);
   };
   container.querySelector('#refresh-admin-btn').onclick = () => {
+    const { fetchGlobalStats } = import('./StatsService.js').then(m => {
+      m.fetchGlobalStats().then(stats => {
+        container.querySelector('#admin-total-tx').innerText = stats.totalTx;
+      });
+    });
     console.log('Refreshing admin data...');
     container.querySelector('#total-pot-arbs').innerText = Math.floor(Math.random() * 10);
   };
