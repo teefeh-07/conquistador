@@ -1,0 +1,1 @@
+export const calculateProgress = (milestones) => {\n  if (milestones.length === 0) return 0;\n  const completed = milestones.filter(m => m.status === 'COMPLETED').length;\n  return (completed / milestones.length) * 100;\n};
