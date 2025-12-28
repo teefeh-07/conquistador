@@ -1,0 +1,1 @@
+export const renderTerms = () => {\n  return '<div class="terms-content"><h4>Terms of Service</h4><p>By using Conquistador, you agree to the trustless escrow rules defined in our smart contracts.</p></div>';\n};
