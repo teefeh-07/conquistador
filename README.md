@@ -149,4 +149,5 @@ Deploy the contract using a Stacks-compatible development environment (e.g., Cla
 ---
 
 ## License
-This project is open-sourced under the MIT License.
+This project is open-sourced under the MIT License.## Mission Statement
+Empowering trustless commerce through automated escrow and verifiable reputation.
