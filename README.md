@@ -149,4 +149,7 @@ Deploy the contract using a Stacks-compatible development environment (e.g., Cla
 ---
 
 ## License
-This project is open-sourced under the MIT License.
+This project is open-sourced under the MIT License.## Core Features
+- Decentralized Escrow
+- Reputation Tracking
+- Dispute Resolution (In-Progress)
