@@ -26,6 +26,13 @@
   container.querySelector('#export-arbs-btn').onclick = () => {
     alert('Feature coming soon: Exporting arbitrator list to CSV');
   };
+  container.querySelector('#search-arb-history').oninput = (e) => {
+    const q = e.target.value.toLowerCase();
+    const items = container.querySelectorAll('#arb-history-list li');
+    items.forEach(item => {
+      item.style.display = item.innerText.toLowerCase().includes(q) ? 'block' : 'none';
+    });
+  };
 export const renderArbWhitelist = () => {\n  const container = document.createElement('section');\n  container.className = 'arb-whitelist';\n  container.innerHTML = '<h3>Arbitrator Management</h3><div class='admin-stats'><p>Total Potential Arbitrators: <span id='total-pot-arbs'>0</span></p></div><div id="arb-whitelist-list">Loading...</div>';\n    container.querySelector('#add-arb-btn').onclick = async () => {
     const historyList = container.querySelector('#arb-history-list');
     const li = document.createElement('li');
