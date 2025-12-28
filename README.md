@@ -161,3 +161,7 @@ This project is open-sourced under the MIT License.
 ### Steps
 1. Clone the repository
 2. Run `npm install`
+### JavaScript Example: Release Funds
+```javascript
+await releaseFundsOnChain(1);
+```
