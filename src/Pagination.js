@@ -1,0 +1,1 @@
+export const renderPagination = (currentPage, totalPages) => {\n  const pagination = document.createElement('div');\n  pagination.className = 'pagination';\n  pagination.innerHTML = `<button id='prev-page'>Previous</button><span>Page ${currentPage} of ${totalPages}</span><button id='next-page'>Next</button>`;\n  return pagination;\n};
