@@ -48,3 +48,4 @@ select { background: #0f172a; border: 1px solid #334155; color: white; padding: 
 .health-online { color: #10b981; font-weight: bold; text-shadow: 0 0 5px #10b981; }
 .danger { background: #991b1b; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; transition: background 0.3s; } .danger:hover { background: #b91c1c; }
 .tx-item { background: #1e293b; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem; border: 1px solid #334155; } .tx-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem; } .tx-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.milestone-progress-container { background: #0f172a; height: 8px; border-radius: 4px; overflow: hidden; margin: 1rem 0; } .milestone-progress-bar { background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%); height: 100%; transition: width 0.5s ease; }
