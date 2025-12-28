@@ -30,6 +30,7 @@
 )
 
 ;; Transaction Map
+;; Data Storage: Transactions
 (define-map transactions 
   { id: uint }
   {
