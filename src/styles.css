@@ -7,3 +7,4 @@ button:hover { background: #2563eb; transform: translateY(-1px); }
 .notification { position: fixed; top: 20px; right: 20px; padding: 1rem; border-radius: 8px; background: #334155; color: white; animation: slideIn 0.3s ease-out; }
 @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
+nav { background: #1e293b; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; }
