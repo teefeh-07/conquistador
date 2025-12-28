@@ -1,0 +1,1 @@
+export const renderDashboard = () => {\n  const dashboard = document.createElement('main');\n  dashboard.className = 'dashboard';\n  dashboard.innerHTML = '<h2>Welcome Back, Conquistador</h2>';\n  return dashboard;\n};
