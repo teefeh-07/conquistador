@@ -27,3 +27,4 @@ nav li:hover { background: #334155; }
 select { background: #0f172a; border: 1px solid #334155; color: white; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; }
 >>>>>>> feat/frontend-stats-init
 .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-pending { background: #fef3c7; color: #92400e; }
