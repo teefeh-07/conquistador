@@ -1,0 +1,1 @@
+export const renderUserSearch = () => {\n  const container = document.createElement('div');\n  container.className = 'user-search';\n  container.innerHTML = '<input type="text" id="user-search-input" placeholder="Lookup user STX address..." /><button id="user-search-btn">Check Reputation</button><div id="user-search-result"></div>';\n  return container;\n};
