@@ -12,8 +12,11 @@ import { renderReputationCard } from './ReputationCard.js';
 import { renderTxForm } from './TransactionForm.js';
 
 // Import services
+import { renderStats } from './StatsGrid.js';
 import { fetchTransactionHistory } from './TransactionHistoryService.js';
 import { fetchReputationScore } from './ReputationService.js';
+import { fetchGlobalStats } from './StatsService.js';
+import { updateStatsGrid } from './StatsGrid.js';
 import { updateReputationCard } from './ReputationCard.js';
 
 // Get root element
@@ -23,6 +26,7 @@ const root = document.getElementById('root');
 root.appendChild(renderNav());
 root.appendChild(renderHeader());
 root.appendChild(renderDashboard());
+root.appendChild(renderStats());
 root.appendChild(renderTxForm());
 root.appendChild(renderTransactionList());
 root.appendChild(renderReputationCard());
