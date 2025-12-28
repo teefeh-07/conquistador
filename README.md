@@ -165,3 +165,7 @@ This project is open-sourced under the MIT License.
 ```javascript
 await releaseFundsOnChain(1);
 ```
+## Running Tests
+`npm test`
+## Building the Project
+`npm run build`
