@@ -50,6 +50,11 @@
   container.querySelector('#download-audit-btn').onclick = () => {
     alert('Downloading admin audit trail...');
   };
+  container.querySelector('#emergency-deactivate-btn').onclick = () => {
+    if (confirm('Are you sure you want to deactivate ALL arbitrators? This action is irreversible via UI.')) {
+      alert('Emergency deactivation triggered.');
+    }
+  };
 export const renderArbWhitelist = () => {\n  const container = document.createElement('section');\n  container.className = 'arb-whitelist';\n  container.innerHTML = '<h3>Arbitrator Management</h3><div class='admin-stats'><p>Total Potential Arbitrators: <span id='total-pot-arbs'>0</span></p></div><div id="arb-whitelist-list">Loading...</div>';\n    container.querySelector('#add-arb-btn').onclick = async () => {
     const historyList = container.querySelector('#arb-history-list');
     const li = document.createElement('li');
