@@ -22,3 +22,4 @@ nav li:hover { background: #334155; }
 .modal-content { background-color: #1e293b; margin: 10% auto; padding: 2rem; border: 1px solid #334155; border-radius: 12px; width: 80%; max-width: 600px; }
 .close { color: #94a3b8; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 .close:hover, .close:focus { color: #f8fafc; }
+.search-bar { margin: 1rem 0; }
