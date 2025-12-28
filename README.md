@@ -154,3 +154,10 @@ This project is open-sourced under the MIT License.
 - Decentralized Escrow
 - Reputation Tracking
 - Dispute Resolution (In-Progress)
+
+## Installation
+### Prerequisites
+- Node.js v18+
+### Steps
+1. Clone the repository
+2. Run `npm install`
