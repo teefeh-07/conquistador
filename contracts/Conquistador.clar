@@ -30,6 +30,7 @@
 )
 
 ;; Transaction Map
+;; Data Storage: Transactions
 (define-map transactions 
   { id: uint }
   {
@@ -44,6 +45,7 @@
 )
 
 ;; User Reputation Map
+;; Data Storage: User Reputation
 (define-map user-reputation 
   { user: principal }
   { total-points: uint, total-transactions: uint }
