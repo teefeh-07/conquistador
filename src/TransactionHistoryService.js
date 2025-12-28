@@ -6,3 +6,4 @@ export const fetchTransactionHistory = async (user) => {\n  // Implementation he
   }
   return txs;
 const getTransactionDetails = async (id) => {\n  // Implementation for get-transaction-details call\n  return null;\n};
+import { uintCV } from '@stacks/transactions';
