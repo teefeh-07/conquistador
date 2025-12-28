@@ -23,3 +23,4 @@ nav li:hover { background: #334155; }
 .close { color: #94a3b8; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 .close:hover, .close:focus { color: #f8fafc; }
 select { background: #0f172a; border: 1px solid #334155; color: white; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
