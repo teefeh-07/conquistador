@@ -11,8 +11,6 @@ import { renderTransactionList } from './TransactionList.js';
 import { renderArbitratorDashboard, updateDisputedList } from './ArbitratorDashboard.js';
 import { fetchDisputedTransactions } from './ArbitratorService.js';
 import { getState, setState } from './State.js';
-import { renderDetailedProfile, updateStatusChart } from './DetailedProfile.js';
-import { getStatusBreakdown } from './ReputationService.js';
 import { filterTransactions, searchTransactions } from './FilterService.js';
 import { renderReputationCard } from './ReputationCard.js';
 import { renderFooter } from './Footer.js';
@@ -37,7 +35,6 @@ root.appendChild(renderStats());
 root.appendChild(renderTxForm());
 root.appendChild(renderTransactionList());
 root.appendChild(renderReputationCard());
-root.appendChild(renderDetailedProfile());
   const arbDashboard = renderArbitratorDashboard();
   arbDashboard.style.display = 'none';
   root.appendChild(arbDashboard);
@@ -98,8 +95,6 @@ const initApp = async () => {
   try {
     const txs = await fetchTransactionHistory(userAddress);
     setState({ allTransactions: txs });
-    const breakdown = getStatusBreakdown(txs);
-    updateStatusChart(breakdown);
     updateTransactionList(txs);
   } catch (err) {
     console.error('Failed to fetch transactions:', err);
