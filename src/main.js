@@ -220,5 +220,7 @@ window.toggleMilestones = async (txId) => {\n  const area = document.getElementB
   const progress = calculateProgress(milestones);
   const progressEl = document.getElementById(`m-progress-${txId}`);
   if (progressEl) progressEl.style.width = `${progress}%`;
+  const countEl = document.getElementById(`m-count-${txId}`);
+  if (countEl) countEl.innerText = `(${milestones.length} Milestones)`;
 window.resolveDispute = async (txId, winner) => {\n  const { resolveDisputeOnChain } = await import('./ContractInteractions.js');\n  try {\n    await resolveDisputeOnChain(txId, winner);\n    const { showNotification } = await import('./Notifications.js');\n    showNotification('Dispute Resolved!', 'success');\n  } catch (err) {\n    const { showNotification } = await import('./Notifications.js');\n    showNotification('Failed to resolve dispute', 'error');\n  }\n};
 const applyFilters = () => {\n  const { allTransactions } = getState();\n  const status = document.getElementById('status-filter')?.value || 'all';\n  const query = document.getElementById('search-input')?.value || '';\n  \n  let filtered = filterTransactions(allTransactions, status);\n  filtered = searchTransactions(filtered, query);\n  \n  updateTransactionList(filtered);\n};
