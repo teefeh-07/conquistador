@@ -5,3 +5,5 @@ window.raiseDispute = async (id) => {\n  const { raiseDisputeOnChain } = await i
   import('./Notifications.js').then(({ showNotification }) => showNotification('Dispute Raised!', 'warning'));\n};
 import { renderNav } from './Navigation.js';
 document.getElementById('root').prepend(renderNav());
+import { fetchTransactionHistory } from './TransactionHistoryService.js';
+fetchTransactionHistory().then(txs => updateTransactionList(txs));
