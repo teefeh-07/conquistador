@@ -208,3 +208,14 @@ n
     )
   )
 )
+n;; Add a milestone to a transaction (Sender only)
+(define-public (add-milestone (transaction-id uint) (milestone-id uint) (description (string-ascii 50)) (amount uint))
+  (let
+    (
+      (transaction (unwrap! (map-get? transactions { id: transaction-id }) ERR-TRANSACTION-NOT-FOUND))
+    )
+    (asserts! (is-eq tx-sender (get sender transaction)) ERR-UNAUTHORIZED)
+    (map-set milestones { transaction-id: transaction-id, milestone-id: milestone-id } { description: description, amount: amount, status: "PENDING" })
+    (ok true)
+  )
+)
