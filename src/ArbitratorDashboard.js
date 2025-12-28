@@ -1,0 +1,1 @@
+export const renderArbitratorDashboard = () => {\n  const dashboard = document.createElement('section');\n  dashboard.className = 'arbitrator-dashboard';\n  dashboard.innerHTML = '<h3>Arbitrator Dashboard</h3><div id="disputed-list">Loading disputes...</div>';\n  return dashboard;\n};
