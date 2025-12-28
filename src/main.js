@@ -81,6 +81,13 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const shareBtn = document.getElementById('share-dash-btn');
+  if (shareBtn) {
+    shareBtn.onclick = () => {
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copied!');
+    };
+  }
   const resetBtn = document.getElementById('clear-filters-btn');
   if (resetBtn) {
     resetBtn.onclick = () => {
