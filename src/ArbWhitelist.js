@@ -1,4 +1,8 @@
   container.querySelector('#check-arb-btn').onclick = async () => {
+    const auditList = container.querySelector('#admin-audit-list');
+    const li = document.createElement('li');
+    li.innerText = `Checked: ${address} - Result: ${status.active ? 'Active' : 'Inactive'} at ${new Date().toLocaleTimeString()}`;
+    auditList.appendChild(li);
     const address = container.querySelector('#manage-arb-address').value;
     if (!address) return;
     const { checkArbWhitelisted } = await import('./ArbWhitelistService.js');
