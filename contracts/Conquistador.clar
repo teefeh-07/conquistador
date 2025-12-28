@@ -55,6 +55,7 @@
 )
 
 ;; Transaction Milestones
+;; Data Storage: Milestones
 (define-map milestones { transaction-id: uint, milestone-id: uint } { description: (string-ascii 50), amount: uint, status: (string-ascii 20) })
 ;; Generate unique transaction ID
 (define-data-var disputes-count uint u0)
