@@ -1,0 +1,1 @@
+export const renderProfile = () => {\n  const profile = document.createElement('section');\n  profile.className = 'profile';\n  profile.innerHTML = '<h2>My Profile</h2><div class='stats'><div class='stat-item'><span>Total Transactions:</span><span id='profile-tx-count'>0</span></div></div>';\n  return profile;\n};

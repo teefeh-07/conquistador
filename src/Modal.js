@@ -1,0 +1,1 @@
+export const renderModal = (title, content) => {\n  const modal = document.createElement('div');\n  modal.className = 'modal';\n  modal.innerHTML = `<div class='modal-content'><span class='close'>&times;</span><h2>${title}</h2><div>${content}</div></div>`;\n  return modal;\n};

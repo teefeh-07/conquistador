@@ -1,0 +1,1 @@
+export const renderFilter = () => {\n  const filter = document.createElement('div');\n  filter.className = 'filter-bar';\n  filter.innerHTML = '<select id="status-filter"><option value="all">All</option><option value="PENDING">Pending</option><option value="COMPLETED">Completed</option><option value="DISPUTED">Disputed</option></select>';\n  return filter;\n};

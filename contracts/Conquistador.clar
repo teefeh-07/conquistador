@@ -120,6 +120,9 @@
 )
 
 ;; Add reputation points
+;; @public add-reputation-points
+;; @param transaction-id: uint - ID of the transaction
+;; @param points: uint - Reputation points to award
 (define-public (add-reputation-points
     (transaction-id uint)
     (points uint)
@@ -188,6 +191,9 @@
   (map-get? transactions { id: transaction-id })
 )
 n
+;; @public resolve-dispute
+;; @param transaction-id: uint - ID of the disputed transaction
+;; @param winner: principal - Address that won the dispute
 (define-public (resolve-dispute
     (transaction-id uint)
     (winner principal)

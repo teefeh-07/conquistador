@@ -169,3 +169,6 @@ await releaseFundsOnChain(1);
 `npm test`
 ## Building the Project
 `npm run build`
+- `add-reputation-points`: Adds reputation points to a user.
+- `raise-dispute`: Raises a dispute for a transaction.
+- `resolve-dispute`: Resolves a dispute (arbitrator only).
