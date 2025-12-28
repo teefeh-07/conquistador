@@ -149,4 +149,7 @@ Deploy the contract using a Stacks-compatible development environment (e.g., Cla
 ---
 
 ## License
-This project is open-sourced under the MIT License.
+This project is open-sourced under the MIT License.## Tech Stack
+- Stacks Blockchain (Clarity 4)
+- React (Vite)
+- Node.js
