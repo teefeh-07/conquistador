@@ -1,0 +1,1 @@
+export const renderDetailedProfile = (stats) => {\n  const container = document.createElement('div');\n  container.className = 'detailed-profile';\n  container.innerHTML = '<h3>Transaction Breakdown</h3><div id="status-chart"></div>';\n  return container;\n};
