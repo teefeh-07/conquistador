@@ -1,0 +1,1 @@
+export const renderSearch = () => {\n  const search = document.createElement('div');\n  search.className = 'search-bar';\n  search.innerHTML = '<input type="text" id="search-input" placeholder="Search transactions..." />';\n  return search;\n};

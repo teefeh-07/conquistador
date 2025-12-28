@@ -1,0 +1,1 @@
+export const renderStats = () => {\n  const stats = document.createElement('div');\n  stats.className = 'stats-grid';\n  stats.innerHTML = '<div class="stat-card"><h4>Total Transactions</h4><p id="stat-total-tx">0</p></div><div class="stat-card"><h4>Active Disputes</h4><p id="stat-disputes">0</p></div>';\n  return stats;\n};
