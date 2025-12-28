@@ -81,6 +81,16 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const { callReadOnlyFunction } = await import('@stacks/transactions');
+  const ownerResult = await callReadOnlyFunction({
+    contractAddress: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
+    contractName: 'Conquistador',
+    functionName: 'get-contract-owner',
+    functionArgs: [],
+    senderAddress: userAddress,
+  });
+  const adminLink = document.getElementById('nav-admin');
+  if (adminLink) adminLink.style.display = ownerResult.value.address === userAddress ? 'block' : 'none';
   const adminLink = document.getElementById('nav-admin');
   if (adminLink) {
     adminLink.onclick = () => {
