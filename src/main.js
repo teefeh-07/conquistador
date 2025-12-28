@@ -58,6 +58,52 @@ window.raiseDispute = async (id) => {
   }
 };
 
+window.resolveDispute = async (txId, winner) => {
+  const { resolveDisputeOnChain } = await import('./ContractInteractions.js');
+  try {
+    await resolveDisputeOnChain(txId, winner);
+    const { showNotification } = await import('./Notifications.js');
+    showNotification('Dispute Resolved!', 'success');
+  } catch (err) {
+    const { showNotification } = await import('./Notifications.js');
+    showNotification('Failed to resolve dispute', 'error');
+  }
+};
+
+window.toggleMilestones = async (txId) => {
+  const area = document.getElementById(`milestone-area-${txId}`);
+  if (area.innerHTML) {
+    area.innerHTML = '';
+    return;
+  }
+  const { fetchMilestones } = await import('./MilestoneService.js');
+  const milestones = await fetchMilestones(txId);
+  const { renderMilestoneList } = await import('./MilestoneList.js');
+  const { renderMilestoneForm } = await import('./MilestoneForm.js');
+  area.appendChild(renderMilestoneList(milestones));
+  area.appendChild(renderMilestoneForm(txId));
+};
+
+window.viewTxHistory = async (txId) => {
+  const { renderModal } = await import('./Modal.js');
+  const modal = renderModal(`Transaction #${txId} History`, '<p>Loading history...</p>');
+  document.body.appendChild(modal);
+  modal.style.display = 'block';
+  modal.querySelector('.close').onclick = () => modal.remove();
+};
+
+window.completeMilestone = async (txId, mId) => {
+  const { completeMilestoneOnChain } = await import('./ContractInteractions.js');
+  try {
+    await completeMilestoneOnChain(txId, mId);
+    const { showNotification } = await import('./Notifications.js');
+    showNotification('Milestone Completed!', 'success');
+  } catch (err) {
+    const { showNotification } = await import('./Notifications.js');
+    showNotification('Failed to complete milestone', 'error');
+  }
+};
+
 // Initialize data
 const initApp = async () => {
   try {
@@ -66,23 +112,33 @@ const initApp = async () => {
   } catch (err) {
     console.error('Failed to fetch global stats:', err);
   }
+
   const userAddress = 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM'; // TODO: Get from session
-  
+
   try {
     const txs = await fetchTransactionHistory(userAddress);
     updateTransactionList(txs);
   } catch (err) {
     console.error('Failed to fetch transactions:', err);
   }
-  
+
   try {
     const reputation = await fetchReputationScore(userAddress);
     updateReputationCard(reputation.score, reputation.total);
   } catch (err) {
     console.error('Failed to fetch reputation:', err);
   }
+
+  // Set up event listeners that need DOM items
+  const newEscrowBtn = document.getElementById('new-escrow-btn');
+  if (newEscrowBtn) {
+    newEscrowBtn.onclick = () => {
+      const form = document.querySelector('.tx-form-container');
+      if (form) {
+        form.style.display = form.style.display === 'block' ? 'none' : 'block';
+      }
+    };
+  }
 };
 
 initApp();
-window.toggleMilestones = async (txId) => {\n  const area = document.getElementById(`milestone-area-${txId}`);\n  if (area.innerHTML) { area.innerHTML = ''; return; }\n  const { renderMilestoneForm } = await import('./MilestoneForm.js');\n  area.appendChild(renderMilestoneForm(txId));\n};
-window.resolveDispute = async (txId, winner) => {\n  const { resolveDisputeOnChain } = await import('./ContractInteractions.js');\n  try {\n    await resolveDisputeOnChain(txId, winner);\n    const { showNotification } = await import('./Notifications.js');\n    showNotification('Dispute Resolved!', 'success');\n  } catch (err) {\n    const { showNotification } = await import('./Notifications.js');\n    showNotification('Failed to resolve dispute', 'error');\n  }\n};
