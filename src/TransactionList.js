@@ -26,7 +26,7 @@ export const updateTransactionList = async (transactions) => {
         <span class='tx-party'>From: ${formatAddress(tx.sender)}</span>
         <span class='tx-party'>To: ${formatAddress(tx.recipient)}</span>
         <span class='tx-amount'>${tx.amount} STX</span>
-        <span class='tx-status'>Status: ${renderBadge(tx.status, tx.status.toLowerCase()).outerHTML}</span> <span class='m-count' id='m-count-${tx.id}'></span>
+        <span class='tx-status'>Source: ${renderBadge('Web App', 'source').outerHTML} Status: ${renderBadge(tx.status, tx.status.toLowerCase()).outerHTML}</span> <span class='m-count' id='m-count-${tx.id}'></span>
       </div>
       <div class='tx-actions'>
         <button onclick="window.releaseFunds(${tx.id})" class='btn-release'>Release</button>
