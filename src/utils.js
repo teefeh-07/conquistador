@@ -1,1 +1,2 @@
 export const formatAddress = (addr) => addr ? `${addr.slice(0, 6)}...${addr.slice(-4)}` : '';
+export const exportToCSV = (data, filename) => {\n  const csv = data.map(row => Object.values(row).join(',')).join('\n');\n  const blob = new Blob([csv], { type: 'text/csv' });\n  const url = window.URL.createObjectURL(blob);\n  const a = document.createElement('a');\n  a.setAttribute('hidden', '');\n  a.setAttribute('href', url);\n  a.setAttribute('download', `${filename}.csv`);\n  document.body.appendChild(a);\n  a.click();\n  document.body.removeChild(a);\n};
