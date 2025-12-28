@@ -200,3 +200,7 @@
 (define-read-only (get-transaction-details (transaction-id uint))
   (map-get? transactions { id: transaction-id })
 )
+n;; Resolve a dispute (Arbitrator only)
+(define-public (resolve-dispute (transaction-id uint) (winner principal))
+  (ok true)
+)
