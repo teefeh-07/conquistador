@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hirosystems/chainhooks-client": "^1.0.0",
     "@stacks/connect": "^8.2.4"
   }
 }
