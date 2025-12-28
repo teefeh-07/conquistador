@@ -58,6 +58,12 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  try {
+    const stats = await fetchGlobalStats();
+    updateStatsGrid(stats.totalTx, stats.totalDisputes);
+  } catch (err) {
+    console.error('Failed to fetch global stats:', err);
+  }
   const userAddress = 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM'; // TODO: Get from session
   
   try {
