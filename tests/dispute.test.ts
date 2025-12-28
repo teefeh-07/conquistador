@@ -2,3 +2,4 @@ import { describe, it, expect } from 'vitest';\n\ndescribe('Dispute Resolution T
   it('should track total disputes count', () => {\n    const { result } = simnet.callReadOnlyFn('Conquistador', 'get-total-disputes', [], wallet1);\n    expect(result).toBe(Cl.uint(0));\n  });
   it('should allow owner to add an arbitrator', () => {\n    const { result } = simnet.callPublicFn('Conquistador', 'add-arbitrator', [Cl.principal(wallet2)], deployer);\n    expect(result).toBeOk(Cl.bool(true));\n  });
   it('should not allow non-owner to add an arbitrator', () => {\n    const { result } = simnet.callPublicFn('Conquistador', 'add-arbitrator', [Cl.principal(wallet2)], wallet1);\n    expect(result).toBeErr(Cl.uint(1)); // ERR-UNAUTHORIZED\n  });
+  it('should allow owner to deactivate an arbitrator', () => {\n    const { result } = simnet.callPublicFn('Conquistador', 'deactivate-arbitrator', [Cl.principal(wallet2)], deployer);\n    expect(result).toBeOk(Cl.bool(true));\n  });
