@@ -40,3 +40,4 @@ select { background: #0f172a; border: 1px solid #334155; color: white; padding: 
 .log-item { padding: 0.5rem; border-bottom: 1px solid #334155; color: #cbd5e1; font-family: monospace; }
 .settings { background: #1e293b; padding: 2rem; border-radius: 12px; margin-top: 2rem; } .setting-row { display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
 .network-switcher { position: fixed; bottom: 20px; left: 20px; z-index: 100; }
+.user-search { margin: 2rem 0; padding: 1.5rem; background: #1e293b; border-radius: 12px; border: 1px solid #334155; } .user-search input { min-width: 300px; }
