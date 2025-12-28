@@ -7,6 +7,7 @@
 (define-constant ERR-TRANSACTION-NOT-FOUND (err u4))
 (define-constant ERR-INVALID-POINTS (err u5))
 (define-constant ERR-INVALID-TRANSACTION-ID (err u6))
+(define-constant ERR-DISPUTE-ALREADY-RAISED (err u7))
 
 ;; Validate recipient is not the sender
 (define-private (is-valid-recipient (recipient principal))
