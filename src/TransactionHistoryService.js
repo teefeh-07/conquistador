@@ -1,4 +1,4 @@
-export const fetchTransactionHistory = async (user) => {\n  // Implementation here\n    const total = await getTotalTransactions();
+export const fetchTransactionHistory = async (user) => {\n  // Implementation here\n    const total = await getTotalTransactions(user);
   const txs = [];
   for (let i = 1; i < total; i++) {
     const tx = await getTransactionDetails(i);
