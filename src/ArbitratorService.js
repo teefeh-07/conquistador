@@ -1,0 +1,1 @@
+import { fetchTransactionHistory } from './TransactionHistoryService.js';\n\nexport const fetchDisputedTransactions = async () => {\n  const allTx = await fetchTransactionHistory('ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM');\n  return allTx.filter(tx => tx.status === 'DISPUTED');\n};
