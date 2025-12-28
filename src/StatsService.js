@@ -11,4 +11,4 @@ import { callReadOnlyFunction } from '@stacks/transactions';\n\nexport const fet
     functionName: 'get-total-transactions',
     functionArgs: [],
     senderAddress: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
-  });\n  return { totalTx: 0, totalDisputes: 0 };\n};
+  });\n  return { totalTx: Number(totalTx.value), totalDisputes: Number(totalDisputes.value) };\n};
