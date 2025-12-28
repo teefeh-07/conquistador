@@ -70,6 +70,19 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const logLink = document.getElementById('nav-notifs');
+  if (logLink) {
+    logLink.onclick = async () => {
+      const { getNotifications } = await import('./NotificationHistory.js');
+      const { renderModal } = await import('./Modal.js');
+      const logs = getNotifications();
+      const content = logs.length ? logs.map(l => `<div class='log-item'>${l.time}: ${l.msg}</div>`).join('') : 'No recent logs';
+      const modal = renderModal('Activity Log', content);
+      document.body.appendChild(modal);
+      modal.style.display = 'block';
+      modal.querySelector('.close').onclick = () => modal.remove();
+    };
+  }
   const exportBtn = document.getElementById('export-history-btn');
   if (exportBtn) {
     exportBtn.onclick = async () => {
