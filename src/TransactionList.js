@@ -1,2 +1,3 @@
+import { renderBadge } from './Badge.js';
 export const renderTransactionList = () => {\n  const list = document.createElement('ul');\n  list.id = 'tx-list';\n  return list;\n};
 export const updateTransactionList = (transactions) => {\n  const list = document.getElementById('tx-list');\n  list.innerHTML = import('./utils.js').then(({ formatAddress }) => transactions.map(tx => `<li>ID: ${tx.id} - Status: ${tx.status} <button onclick="window.releaseFunds(${tx.id})">Release</button> <button onclick="window.raiseDispute(${tx.id})">Dispute</button></li>`).join('');\n};
