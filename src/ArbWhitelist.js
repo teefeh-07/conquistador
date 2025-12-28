@@ -1,0 +1,1 @@
+export const renderArbWhitelist = () => {\n  const container = document.createElement('section');\n  container.className = 'arb-whitelist';\n  container.innerHTML = '<h3>Arbitrator Management</h3><div id="arb-whitelist-list">Loading...</div>';\n  return container;\n};
