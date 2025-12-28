@@ -1,1 +1,1 @@
-export const filterTransactions = (txs, status) => {\n  if (status === 'all') return txs;\n  return txs.filter(tx => tx.status === status);\n};
+export const searchTransactions = (txs, query) => {\n  if (!query) return txs;\n  const q = query.toLowerCase();\n  return txs.filter(tx => \n    String(tx.id).includes(q) || \n    tx.sender.toLowerCase().includes(q) || \n    tx.recipient.toLowerCase().includes(q)\n  );\n};
