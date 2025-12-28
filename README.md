@@ -180,3 +180,5 @@ Conquistador is built with a modular architecture split between Clarity smart co
 ### Frontend
 - **Component Based**: Modular JS components for each UI element.
 - **Service Layer**: Decoupled contract interaction and data fetching logic.
+## Administrative Features
+The contract owner has access to the Admin panel to manage whitelisted arbitrators.
