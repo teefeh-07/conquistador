@@ -75,6 +75,17 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const helpLink = document.getElementById('nav-help');
+  if (helpLink) {
+    helpLink.onclick = async () => {
+      const { renderHelpModal } = await import('./HelpContent.js');
+      const { renderModal } = await import('./Modal.js');
+      const modal = renderModal('User Guide', renderHelpModal());
+      document.body.appendChild(modal);
+      modal.style.display = 'block';
+      modal.querySelector('.close').onclick = () => modal.remove();
+    };
+  }
   const prioritySelector = document.getElementById('tx-priority');
   if (prioritySelector) {
     prioritySelector.onchange = (e) => {
