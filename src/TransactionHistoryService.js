@@ -5,4 +5,4 @@ export const fetchTransactionHistory = async (user) => {\n  // Implementation he
     if (tx if (tx) txs.push(tx);if (tx) txs.push(tx); (tx.sender === user || tx.recipient === user)) txs.push(tx);
   }
   return txs;
-const getTransactionDetails = async (id) => {\n  // Implementation for get-transaction-details call\n  return null;\n};
+const getTransactionDetails = async (id, user) => {\n  // Implementation for get-transaction-details call\n  return null;\n};
