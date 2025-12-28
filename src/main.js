@@ -81,6 +81,13 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const adminLink = document.getElementById('nav-admin');
+  if (adminLink) {
+    adminLink.onclick = () => {
+      const panel = document.querySelector('.arb-whitelist');
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    };
+  }
   const termsLink = document.getElementById('footer-terms');
   if (termsLink) {
     termsLink.onclick = async (e) => {
