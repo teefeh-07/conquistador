@@ -1,14 +1,74 @@
-console.log('Conquistador initialized');
-window.releaseFunds = async (id) => {\n  const { releaseFundsOnChain } = await import('./ContractInteractions.js');\n    await releaseFundsOnChain(id);
-  import('./Notifications.js').then(({ showNotification }) => showNotification('Funds Released!', 'success'));\n};
-window.raiseDispute = async (id) => {\n  const { raiseDisputeOnChain } = await import('./ContractInteractions.js');\n    await raiseDisputeOnChain(id);
-  import('./Notifications.js').then(({ showNotification }) => showNotification('Dispute Raised!', 'warning'));\n};
+// Import global styles and error handling
+import './styles.css';
+import './ErrorHandler.js';
+
+// Import components
+import { updateTransactionList } from './TransactionList.js';
+import { renderHeader } from './Header.js';
 import { renderNav } from './Navigation.js';
-document.getElementById('root').prepend(renderNav());
+import { renderDashboard } from './Dashboard.js';
+import { renderTransactionList } from './TransactionList.js';
+import { renderReputationCard } from './ReputationCard.js';
+import { renderTxForm } from './TransactionForm.js';
+
+// Import services
 import { fetchTransactionHistory } from './TransactionHistoryService.js';
-fetchTransactionHistory().then(txs => updateTransactionList(txs));
 import { fetchReputationScore } from './ReputationService.js';
 import { updateReputationCard } from './ReputationCard.js';
-fetchReputationScore('ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM').then(data => updateReputationCard(data.score, data.total));
-import { renderTxForm } from './TransactionForm.js';
-document.getElementById('root').appendChild(renderTxForm());
+
+// Get root element
+const root = document.getElementById('root');
+
+// Render UI components
+root.appendChild(renderNav());
+root.appendChild(renderHeader());
+root.appendChild(renderDashboard());
+root.appendChild(renderTxForm());
+root.appendChild(renderTransactionList());
+root.appendChild(renderReputationCard());
+
+// Global transaction actions
+window.releaseFunds = async (id) => {
+  const { releaseFundsOnChain } = await import('./ContractInteractions.js');
+  try {
+    await releaseFundsOnChain(id);
+    const { showNotification } = await import('./Notifications.js');
+    showNotification('Funds Released!', 'success');
+  } catch (err) {
+    const { showNotification } = await import('./Notifications.js');
+    showNotification('Failed to release funds', 'error');
+  }
+};
+
+window.raiseDispute = async (id) => {
+  const { raiseDisputeOnChain } = await import('./ContractInteractions.js');
+  try {
+    await raiseDisputeOnChain(id);
+    const { showNotification } = await import('./Notifications.js');
+    showNotification('Dispute Raised!', 'warning');
+  } catch (err) {
+    const { showNotification } = await import('./Notifications.js');
+    showNotification('Failed to raise dispute', 'error');
+  }
+};
+
+// Initialize data
+const initApp = async () => {
+  const userAddress = 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM'; // TODO: Get from session
+  
+  try {
+    const txs = await fetchTransactionHistory(userAddress);
+    updateTransactionList(txs);
+  } catch (err) {
+    console.error('Failed to fetch transactions:', err);
+  }
+  
+  try {
+    const reputation = await fetchReputationScore(userAddress);
+    updateReputationCard(reputation.score, reputation.total);
+  } catch (err) {
+    console.error('Failed to fetch reputation:', err);
+  }
+};
+
+initApp();
