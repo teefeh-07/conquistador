@@ -1,0 +1,1 @@
+export const renderNetworkSwitcher = () => {\n  const container = document.createElement('div');\n  container.className = 'network-switcher';\n  container.innerHTML = '<select id="network-select"><option value="mainnet">Mainnet</option><option value="testnet" selected>Testnet</option><option value="devnet">Devnet</option></select>';\n  return container;\n};
