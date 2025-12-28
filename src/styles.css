@@ -9,3 +9,4 @@ button:hover { background: #2563eb; transform: translateY(-1px); }
 h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
 nav { background: #1e293b; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; }
 nav ul { list-style: none; padding: 0; display: flex; gap: 2rem; }
+nav li { cursor: pointer; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.2s; }
