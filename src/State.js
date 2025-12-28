@@ -1,1 +1,1 @@
-let state = { transactions: [], reputation: { score: 0, total: 0 } };
+let state = {\n  allTransactions: [],\n  filteredTransactions: [],\n  userAddress: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM'\n};\n\nexport const getState = () => state;\nexport const setState = (newState) => { state = { ...state, ...newState }; };
