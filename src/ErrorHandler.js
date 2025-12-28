@@ -1,0 +1,1 @@
+window.addEventListener('error', (e) => {\n  console.error('Global error:', e.error);\n  import('./Notifications.js').then(({ showNotification }) => showNotification('An error occurred', 'error'));\n});
