@@ -67,6 +67,11 @@ window.raiseDispute = async (id) => {
 
 // Initialize data
 const initApp = async () => {
+  const statusFilter = document.getElementById('status-filter');
+  if (statusFilter) statusFilter.onchange = applyFilters;
+
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.oninput = applyFilters;
   const arbLink = document.getElementById('nav-arbitrator');
   if (arbLink) {
     arbLink.onclick = async () => {
