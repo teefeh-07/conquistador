@@ -1,1 +1,1 @@
-export const renderNav = () => {\n  const nav = document.createElement('nav');\n  nav.innerHTML = '<ul><li>Dashboard</li><li>Transactions</li><li>Profile</li><li id='nav-notifs'>Log</li><li id='nav-help'>Help</li></ul>';\n  return nav;\n};
+export const renderNav = () => {\n  const nav = document.createElement('nav');\n  nav.innerHTML = '<ul><li>Dashboard</li><li>Transactions</li><li>Profile</li><li id='nav-notifs'>Log</li><li id='nav-help'>Help</li><li id='nav-admin'>Admin</li></ul>';\n  return nav;\n};
