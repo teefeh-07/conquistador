@@ -38,7 +38,8 @@
     amount: uint,
     status: (string-ascii 20),
     created-at: uint,
-    reputation-points: uint
+    reputation-points: uint,
+    disputed: bool
   }
 )
 
