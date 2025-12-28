@@ -34,3 +34,4 @@ select { background: #0f172a; border: 1px solid #334155; color: white; padding: 
 .badge-completed { background: #dcfce7; color: #166534; }
 .badge-disputed { background: #fee2e2; color: #991b1b; }
 .milestone-form { background: #0f172a; padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 1px dashed #334155; }
+.milestone-form input { background: #1e293b; border: 1px solid #334155; color: white; padding: 0.5rem; border-radius: 4px; margin-right: 0.5rem; }
