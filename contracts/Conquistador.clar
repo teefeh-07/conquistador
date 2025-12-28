@@ -219,6 +219,11 @@ n
   )
 )
 n;; Add a milestone to a transaction (Sender only)
+;; @public add-milestone
+;; @param transaction-id: uint - ID of the transaction
+;; @param milestone-id: uint - ID of the milestone
+;; @param description: (string-ascii 50) - Description of the milestone
+;; @param amount: uint - Amount associated with milestone
 (define-public (add-milestone (transaction-id uint) (milestone-id uint) (description (string-ascii 50)) (amount uint))
   (let
     (
