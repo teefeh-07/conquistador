@@ -24,6 +24,7 @@
     const { fetchGlobalStats } = import('./StatsService.js').then(m => {
       m.fetchGlobalStats().then(stats => {
         container.querySelector('#admin-total-tx').innerText = stats.totalTx;
+        container.querySelector('#total-pot-arbs').innerText = '12';
         container.querySelector('#admin-owner-id').innerText = 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM';
       });
     });
