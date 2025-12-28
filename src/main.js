@@ -8,6 +8,8 @@ import { renderHeader } from './Header.js';
 import { renderNav } from './Navigation.js';
 import { renderDashboard } from './Dashboard.js';
 import { renderTransactionList } from './TransactionList.js';
+import { renderArbitratorDashboard, updateDisputedList } from './ArbitratorDashboard.js';
+import { fetchDisputedTransactions } from './ArbitratorService.js';
 import { renderReputationCard } from './ReputationCard.js';
 import { renderFooter } from './Footer.js';
 import { renderTxForm } from './TransactionForm.js';
@@ -31,6 +33,9 @@ root.appendChild(renderStats());
 root.appendChild(renderTxForm());
 root.appendChild(renderTransactionList());
 root.appendChild(renderReputationCard());
+  const arbDashboard = renderArbitratorDashboard();
+  arbDashboard.style.display = 'none';
+  root.appendChild(arbDashboard);
 root.appendChild(renderFooter());
 
 // Global transaction actions
