@@ -24,3 +24,4 @@ nav li:hover { background: #334155; }
 .close:hover, .close:focus { color: #f8fafc; }
 select { background: #0f172a; border: 1px solid #334155; color: white; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; }
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.stat-card { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid #475569; }
